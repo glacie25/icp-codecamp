@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+        }
+        /* Header styling */
+        header {
+          padding: 5px 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .homepage {
+         background-image: url(Homeb.png);
+         width:1366px;
+         height: 612;
+        }
+        /* menu bar*/
+        #hamburger-menu {
+          margin-left: 30px;
+        }
+        #menu__toggle {
+          opacity: 0; 
+        }
+        #menu__toggle:checked + .menu__btn > span {
+          transform: rotate(45deg);
+        }
+        #menu__toggle:checked + .menu__btn > span::before {
+          top: 0;
+          transform: rotate(0deg);
+        }
+        #menu__toggle:checked + .menu__btn > span::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+        #menu__toggle:checked ~ .menu__box {
+          left: 0 !important;
+        }
+        .menu__btn {
+          position: fixed;
+          top: 50px;
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+          z-index: 1; 
+        }
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color:black;
+          transition-duration: .25s;
+        }
+        .menu__btn > span::before {
+          content: '';
+          top: -8px;
+        }
+        .menu__btn > span::after {
+          content: '';
+          top: 8px;
+        }
+        .menu__box {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 300px;
+          height: 100%;
+          margin: 0;
+          padding: 80px 0;
+          list-style: none;
+          background-color: #ECEFF1;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+          transition-duration: .25s;
+          margin-top: 10pz;
+        }
+        .menu__item {
+          display: block;
+          padding: 12px 24px;
+          color: #333;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          text-decoration: none;
+          transition-duration: .25s;
+        }
+        .menu__item:hover {
+          background-color: #CFD8DC;
+        }
+
+        /* logo*/
+        #logo-container {
+          display: flex;
+          align-items: center;
+          margin-right: auto;
+          border: 1px solid #ad9e6f;
+          margin-left: 40px; 
+        }
+        /* menu*/
+        nav{
+          height: 80px;
+          margin-left: 30px;
+          border: 1px solid #ad9e6f;
+          width: 1160px;
+          box-sizing: border-box;
+          position: relative;
+        }   
+
+        nav ul {
+          padding: 0;
+           margin: 0;
+          position: absolute;
+          top: 0;
+          left: 390px;
+          margin-top: 15px;
+        }
+        nav ul li {
+          display: inline-block;
+          position: relative;
+        }
+
+        nav ul li a {
+          display: block;
+          padding: 10px 20px;
+          text-decoration: none;
+          color: black;
+          font-size: 23px;
+          height: auto;
+          text-align: end;
+        }
+
+        nav ul li:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 20px;
+          right: -10px;
+          transform: translateY(-50%);
+          height: 15px;
+          width: 1px;
+          background-color: #333;
+        }
+
+        nav ul li a:hover {
+          text-decoration: underline;
+        }
+
+        /*home*/
+        #home h1 {
+          margin: 0;
+          font-size: 55px;
+          margin-top: 70px;
+          margin-left: 99px;
+          display: flex;
+          align-items: baseline;
+        }
+
+        #home h1 img {
+          margin: 0;
+          padding: 0;
+          width: 55px;
+          height: auto; 
+        }
+        #home h2{
+          margin: 0;
+          font-size: 55px;
+          margin-top: 10px;
+          margin-left: 155px;
+          display: flex;
+        }
+        #home p {
+          font-size: 20px;
+          margin-left: 155px;
+          margin-top:-1px;
+        }
+
+        about{
+          background-image: url(bg2.png);
+        }
+    </style>
+</head>
+<body>
+  <section class="homepage">
+    <header>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#home">Home</a></li>
+              <li><a class="menu__item" href="#about">About Me</a></li>
+              <li><a class="menu__item" href="#skills">Skill Set</a></li>
+              <li><a class="menu__item" href="#work">Sample Work</a></li>
+              <li><a class="menu__item" href="#seminar">Seminar/Workshops</a></li>
+            </ul>
+        </div>
+
+        <div id="logo-container">
+          <img src="logo.png" alt="Brand Logo" width="80px" height="auto">
+        </div>
+
+        <nav>
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#skills">Skill Set</a></li>
+              <li><a href="#work">Sample Work</a></li>
+              <li><a href="#seminars">Seminars</a></li>
+          </ul>
+        </nav>  
+    </header>
+
+      <section id="home">
+        <h1>Hi! <img src="hiwave.png" alt="Hi wave" class="wave" width="120px" height="auto"></h1>
+        <h2>I’m Glacie Mie B. Garlitos </h2>
+        <p>“Proactive”</p>
+        <div class="aboutme">
+          <p>"I'm a creative enthusiast dedicated to crafting visually captivating and user-friendly web experiences,<br> 
+          driven by a passion for simplicity and the artistry of UI/UX design."</p>
+        </div>
+      </section>
+  </section>
+
+    <!-- ABOUT ME -->
+  <section id="about">
+    <h1>ABOUT ME</h1>
+          <img src="me.jpg" width="25%" height="50%">
+          <div class="info">
+              <h3>I am Glacie Mie B. Garlitos, 20 yrs old ,I lived in Bicos Rizal Nueva Ecija .
+                  I'm currently studying at Phinma Araullo University in Bachelor of Science 
+                  in Information Technology. How the world sees me ,they see me as a proactive person
+                  , organized and detailed type of person. Being a proactive person , I always consider
+                  the potential problems before taking action. It's not about being negative,But it's
+                  better to know the possible problems in advance so that we can find a solution promptly
+                  and prevent it from getting worse. I can say that I am a detailed and organized person.
+                  In every decision I make, I prefer a thorough plan so that everything I do is arranged
+                  and organized,this way, I can accomplish my goals or the things that I want to do.</h3>
+          </div>
+  </section>
+</body>
+
+
+
+        

@@ -1,5 +1,667 @@
-<center>
-<img src="new.png" width="100%"/>
-<br/>
-<img src="ceu_codecamp.jpg"/>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          overflow-x: hidden; 
+        }
+        body, .homepage {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+        /* Header styling */
+        header {
+          padding: 5px 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .homepage {
+  background-image: url('Homeb.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  height: 100vh;
+}
+        /* menu bar*/
+        #hamburger-menu {
+          margin-left: 10px;
+        }
+        #menu__toggle {
+          opacity: 0; 
+        }
+        #menu__toggle:checked + .menu__btn > span {
+          transform: rotate(45deg);
+        }
+        #menu__toggle:checked + .menu__btn > span::before {
+          top: 0;
+          transform: rotate(0deg);
+        }
+        #menu__toggle:checked + .menu__btn > span::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+        #menu__toggle:checked ~ .menu__box {
+          left: 0 !important;
+        }
+        .menu__btn {
+          position: fixed;
+          top: 50px;
+          width: 26px;
+          height: 26px;
+          cursor: pointer;
+          z-index: 1; 
+        }
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color:black;
+          transition-duration: .25s;
+        }
+        .menu__btn > span::before {
+          content: '';
+          top: -8px;
+        }
+        .menu__btn > span::after {
+          content: '';
+          top: 8px;
+        }
+        .menu__box {
+          display: block;
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 300px;
+          height: 35%;
+          margin: 0;
+          padding: 80px 0;
+          list-style: none;
+          background:#DBC587 ;
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+          transition-duration: .25s;
+          margin-top: 10px;
+        }
+        .menu__item {
+          display: block;
+          padding: 12px 24px;
+          color: #333;
+          font-family: 'Roboto', sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          text-decoration: none;
+          transition-duration: .25s;
+        }
+        .menu__item:hover {
+          background-color: #CFD8DC;
+        }
+
+        /* logo*/
+        #logo-container {
+          display: flex;
+          align-items: center;
+          margin-right: auto;
+          border: 1px solid #ad9e6f;
+          margin-left: 40px; 
+          margin-top: 1%;
+        }
+        /* menu*/
+        nav{
+          height: 80px;
+          margin-left: 30px;
+          border: 1px solid #ad9e6f;
+          width: 1160px;
+          box-sizing: border-box;
+          position: relative;
+          margin-top: 1%;
+        } 
+        nav ul {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: 3px;
+          left: 390px;
+          margin-top: 15px;
+        }
+        nav ul li {
+          display: inline-block;
+          position: relative;
+        }
+        nav ul li a {
+          display: block;
+          padding: 10px 20px;
+          text-decoration: none;
+          color: black;
+          font-size: 23px;
+          height: auto;
+          text-align: end;
+        }
+        nav ul li:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 20px;
+          right: -10px;
+          transform: translateY(-50%);
+          height: 15px;
+          width: 1px;
+          background-color: #333;
+        }
+
+        nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown icon */
+.dropdown::after {
+  content: "\25BC"; /* Unicode character for down arrow */
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+          /*home*/
+        #home h1 {
+          margin: 0;
+          font-size: 55px;
+          margin-top: 70px;
+          margin-left: 99px;
+          display: flex;
+          align-items: baseline;
+        }
+
+        #home h1 img {
+          margin: 0;
+          padding: 0;
+          width: 55px;
+          height: auto; 
+        }
+        #home h2{
+          margin: 0;
+          font-size: 55px;
+          margin-top: 10px;
+          margin-left: 155px;
+          display: flex;
+        }
+        #home p {
+          font-size: 20px;
+          margin-left: 155px;
+          margin-top:-1px;
+        }
+
+        #aboutme{
+          background-image: url(bg3.png); 
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          height: 50%;
+          margin-bottom:40%;
+        }
+
+        #aboutme h1{
+          margin-left: 78px;
+          margin-top: 20px;
+          font-size: 40px;
+        }
+
+        #aboutme img{
+          margin-left: 600px;
+          border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: justify; /* Align text to justify */
+            margin-top: -20px;
+            border: 1px;
+        }
+
+        .container {
+            max-width: 1000px; /* Adjust as needed */
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(0.,0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: justify; /* Align text to justify */
+            margin-top: 10px;
+        }
+
+        #skills {
+          background-image: url(bg3.png); 
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          height: 150vh;
+          margin-top: 650px;
+        }
+
+        #skills h1 {
+          text-align: center;
+          margin-bottom: 30px;
+          font-size: 40px;
+          margin-top: 40px;
+        }
+        .skill-list{
+          margin-left: 290px;
+          font-size: 24px;
+          border-bottom: #333 solid;
+          width: 65%;
+          margin-top: 60px;
+        }
+
+        .skill {
+            display: inline-block;
+            margin-left:20px;
+          }
+
+          .skill h4 {
+            display: inline;
+            font-size: 25px;
+            margin-left: 40px;
+          }
+
+          .skill:not(:last-child) {
+            border-right: 1px solid black;
+            padding-right: 5px; /* Adjust this value as needed */
+            margin-right: 2px; /* Adjust this value as needed */
+          }
+
+          .skills-pics{
+            display: flex; /* Use flexbox */
+            margin-right: 80px;
+            align-items: center; /* Center align images vertically */
+            margin-top: 20px;
+         
+          }
+
+          .skill-pic img {
+            width: 100%; /* Adjust width as needed */
+            height: 80%; 
+            margin-top:-100px;
+            margin-left: 80px;
+          }
+          ul {
+          width: 90%;
+          height:50%;
+          margin-left: 75px;
+          display: flex;
+          margin-top: 10px;
+          margin-left: 30px;
+          font-size: 22px;
+          margin-bottom: 90px;
+        }
+
+        .skills-container , .educ-container  , .seminar-container{
+          display: flex;
+        }
+
+        .skill-pic , .educ-pic{
+          margin-right: 10px; /* Adjust as needed */
+        }
+
+  .works{
+            background-image: url(bg3.png); 
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            height: 90vh;
+            margin-top: 91%;
+            width: 100%;
+  }
+  .works h2 , .educ h1  , .seminar h1{
+    font-size: 35px;
+    margin-left: 75px;
+    margin-top: 25px;
+  }
+  .sample-work{
+    margin-top: 5%;
+    display: flex;
+    margin-left: 150px;
+  }
+  .sample-work img{
+    height: 65%;
+    width: 65%;
+    margin-top: 50px;
+  }
+
+  .sample-work p{
+    font-size: 20px;
+    border:1px solid;
+    margin-right: 90px;
+    text-align: center;
+    background-color:whitesmoke;
+    color:black;
+  }
+
+  .educ{
+    background-image: url(bg3.png); 
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            height: 100vh;
+            margin-top: 130%;
+            width: 100%;
+  }
+  .school1, .school2 {
+              margin-bottom: 20px;
+              text-align: center;
+              padding-top: 2%;
+          }
+
+          .school1 h4, .school2 h4 {
+              font-size: 24px;
+              color: #37241A;
+              margin-bottom: 5px;
+              text-align: center;
+              padding-top: 2%;
+              background-color: #AD9551;
+              margin-left: 15%;
+              margin-right: 15%;
+              margin-top: -35px;
+              justify-content: center;
+          }
+
+          .school1 p {
+              font-size: 16px;
+              color: #555;
+              text-align: center;
+              padding-top: 2%;
+              margin-top: -30px;
+          }
+      
+      .educ-pics img {
+        width: 20%;
+      }
+      .educ-pics , .seminar-pics{
+          display: flex; /* Use flexbox */
+        margin-right: 10px;
+          align-items: center; /* Center align images vertically */
+          margin-top: 10px;
+          height:200px;
+        }
+
+        .seminar {
+          background-image: url(bg3.png); 
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                height: 100vh;
+                width: 100%;
+                margin-top: 178%;
+        }
+        .seminar h1{
+          font-size:55px;
+          margin-left:42%;
+          margin-top: 120px;;
+        }
+        .seminar-pics img{
+        width: 90%;
+        margin-top: 100px;
+        margin-left:40px;
+      }
+      footer {
+              background-color: #333;
+              color: #fff;
+              padding: 20px;
+              text-align: center;
+              margin-top:225%;
+          }
+
+          ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              margin-top: 2%;;
+              margin-left: 5%;
+          }
+
+          li {
+              margin: 0 15px;
+          }
+
+          a {
+              text-decoration: none;
+              color: #fff;
+              font-weight: bold;
+          }
+
+          p {
+              margin-top: 20px;
+              font-size: 14px;
+          } 
+    </style>
+</head>
+<body>
+  <section class="homepage">
+    <header>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <ul class="menu__box">
+              <li><a class="menu__item" href="#homepage">Home</a></li>
+              <li><a class="menu__item" href="#aboutme">About Me</a></li>
+              <li><a class="menu__item" href="#education">Education</a></li>
+              <li><a class="menu__item" href="#skills">Skill Set</a></li>
+              <li><a class="menu__item" href="#works">Sample Work</a></li>
+              <li><a class="menu__item" href="#seminar">Seminar/Workshops</a></li>
+              <li><a class="menu__item" href="#contact-me">Contact Me</a></li>
+            </ul>
+        </div>
+
+        <div id="logo-container">
+            <img src="logo.png" alt="Brand Logo" width="80px" height="auto">
+          </div>
+  
+          <nav>
+            <ul>
+              <li><a href="#homepage">Home</a></li>
+              <li class="dropdown">
+                <a href="#aboutme">About Me</a>
+                <div class="dropdown-content">
+                  <a href="#education">Education</a>
+                  <a href="#skills">Skill Set</a>
+                  <!-- Add more subpages if needed -->
+                </div>
+              </li>
+              <li><a href="#works">Sample Work</a></li>
+              <li><a href="#seminars">Seminars</a></li>
+              <li><a href="#contact-me">Contact Me</a></li>
+            </ul>
+          </nav>
+    </header>
+
+  <section id="home">
+        <h1>Hi! <img src="hiwave.png" alt="Hi wave" class="wave" width="120px" height="auto"></h1>
+        <h2>I’m Glacie Mie B. Garlitos </h2>
+        <p>“Proactive”</p>
+        <div class="aboutme">
+          <p>"I'm a creative enthusiast dedicated to crafting visually captivating and user-friendly web experiences,<br> 
+          driven by a passion for simplicity and the artistry of UI/UX design."</p>
+        </div>
+      </section>
+  </section>
+
+  <section id="aboutme">
+    <h1>About Me</h1>
+          <img src="me.jpg" width="20%">
+          <div class="container">
+            <div class="info">
+              <h3>I am Glacie Mie B. Garlitos, 20 yrs old ,I lived in Bicos Rizal Nueva Ecija .
+                I'm currently studying at Phinma Araullo University in Bachelor of Science 
+                in Information Technology. How the world sees me ,they see me as a proactive person
+                , organized and detailed type of person. Being a proactive person , I always consider
+                the potential problems before taking action. It's not about being negative,But it's
+                better to know the possible problems in advance so that we can find a solution promptly
+                and prevent it from getting worse. I can say that I am a detailed and organized person.
+                In every decision I make, I prefer a thorough plan so that everything I do is arranged
+                and organized,this way, I can accomplish my goals or the things that I want to do.
+              </h3>
+            </div>
+          </div>
+  </section>
+
+  <!-- SKILL SET -->
+  <section id="skills">
+    <h1>Skill Sets</h1>
+      <div class="skill-list">
+        <div class="skill">
+          <h4>Problem-Solving</h4> 
+        </div>
+        <div class="skill">
+          <h4>Team Collaboration</h4> 
+        </div>
+        <div class="skill">
+          <h4>Html/Css</h4> 
+        </div>
+        <div class="skill">
+          <h4>UI/UX</h4> 
+        </div>
+      </div>
+      <ul>
+        <div class="skills-container">
+          <div class="skills-pics">
+            <div class="skill-pic">
+              <img src="problem.jpg">
+            </div>
+            <div class="skill-pic">
+              <img src="team.png" width="20%">
+            </div>
+            <div class="skill-pic">
+              <img src="htmlcss.png">
+            </div>
+            <div class="skill-pic">
+              <img src="uiux.png" width="20%">
+            </div>
+          </div>
+        </div>
+    </ul>
+  </section>
+
+  <section id="works" class="works">
+    <h2>My Sample Works</h2>
+    <!-- Replace the content in the data-src attribute with the path to your project folders -->
+    <div class="sample-work">
+        <a href="https://drive.google.com/drive/folders/1G8AELjZ0US8lZMbIA30249BSbiUFqbHg?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <img src="file.png" alt="Project Folder" width="90" height="90">
+            <p>ITE 186</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1WinYZ3B28Xo2N50cBcAtDEIBEl_AG1DT?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <img src="file.png" alt="Project Folder" width="90" height="90">
+            <p>ITE 300</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1WUXa-ykHZ3ynKNDiBf8NsTxbAJkGxjiU?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <img src="file.png" alt="Project Folder" width="90" height="90">
+            <p>ITE 298</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1vA4zzpLnjXI0S_X9-ID5vbKrfAht9-fy?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <img src="file.png" alt="Project Folder" width="90" height="90">
+            <p>ITE 399</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1ot7poMO6qZ_YMV5LDQSYvMs5eIzM_7TH?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          <img src="file.png" alt="Project Folder" width="90" height="90">
+          <p>ITE 393</p>
+        </a>
+        <a href="https://drive.google.com/drive/folders/13kPxaxE1jhkT13BYWmBoq10nhChJYNE9?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          <img src="file.png" alt="Project Folder" width="90" height="90">
+          <p>ITE 308</p>
+        </a>
+    </div>
+  </section>
+  <section id="education" class="educ">
+    <h1>Education</h1>
+    <div class="skill-pic1">
+      <img src="srnh.jpg"  width="12%" style="margin-left: 650px;margin-bottom: 10px;">
+    </div>
+    <div class="school1">
+        <h4>San Ricardo National High School</h4>
+        <p>2020-2022</p>
+    </div>
+    <div class="skill-pic2">
+      <img src="au.jpg"  width="12%" style="margin-left: 650px; margin-bottom: 10px;">
+    </div>
+    <div class="school2">
+        <h4>PHINMA Araullo University</h4>
+        <p>2022-2026</p>
+    </div>
+</section> 
+
+<section id="seminars" class="seminar">
+  <h1>Seminar</h1>
+  <ul>
+    <div class="seminar-container">
+      <div class="seminar-pics">
+        <div class="seminar-pic">
+          <img src="certe1.jpg">
+        </div>
+        <div class="seminar-pic">
+          <img src="certe2.jpg" width="20%">
+        </div><br><br>
+        <div class="seminar-pic">
+          <img src="certe3.jpg">
+        </div>
+        <div class="seminar-pic">
+          <img src="certe4.jpg" width="20%">
+        </div>
+      </div>
+    </div>
+</ul>
+</section>
+
+<footer>
+  <ul>
+      <li><a href="https://www.facebook.com/glaciemie.garlitos?mibextid=ZbWKwL" target="_blank">Facebook</a></li>
+      <li><a href="instagram-link" target="_blank">Instagram</a></li>
+      <li><a href="gmail-link" target="_blank">Gmail</a></li>
+      <li><a href="linkedin-link" target="_blank">LinkedIn</a></li>
+  </ul>
+  <!-- Contact Me section -->
+  <p>Contact Me: garlitosglaciemie@gmail.com</p>
+</footer>
+
+
+
+</body>
+</html>
